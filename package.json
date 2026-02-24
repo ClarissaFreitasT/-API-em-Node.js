@@ -1,0 +1,11 @@
+{
+  "name": "api-em-nodejs-clarissa",
+  "version": "1.0.0",
+  "description": "API simples em Node.js com lista de filmes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Clarissa De Freitas Teixeira",
+  "license": "MIT"
+}
