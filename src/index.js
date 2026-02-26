@@ -2,7 +2,8 @@ import {
   listarFilmes,
   criarFilme,
   atualizarFilme,
-  excluirFilme
+  excluirFilme,
+  obterFilmes
 } from "./filmes.js";
 
 listarFilmes();

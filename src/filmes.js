@@ -84,6 +84,10 @@ const filmes = [
     }
 ];
 
+export function obterFilmes() {
+  return filmes;
+}
+
  export function encontrarFilmesId(id) {
   for (let i = 0; i < filmes.length; i++) {
     if (filmes[i].id === id) {
@@ -156,3 +160,4 @@ export function excluirFilme(id) {
 
   console.log(`Filme removido: ${filmeRemovido.nome}`);
 }
+
