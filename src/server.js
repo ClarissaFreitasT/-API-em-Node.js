@@ -17,9 +17,9 @@ app.post("/filmes", (req, res) => {
     return res.status(400).json({ erro: "Nome, data e gênero são obrigatórios" });
   }
 
-  criarFilme(nome, data, genero);
+  const novoFilme = criarFilme(nome, data, genero);
   console.log(`✓ Filme criado: "${nome}"`);
-  res.status(201).json({ mensagem: "Filme criado com sucesso!" });
+  res.status(201).json(novoFilme);
 });
 
 app.listen(PORT, () => {
