@@ -120,6 +120,7 @@ export function obterFilmes() {
   };
 
   filmes.push(novoFilme);
+  return novoFilme;
 }
 
 export function atualizarFilme(id, novoNome, novaData, novoGenero) {

@@ -19,7 +19,7 @@ app.post("/filmes", (req, res) => {
 
   const novoFilme = criarFilme(nome, data, genero);
   console.log(`✓ Filme criado: "${nome}"`);
-  res.status(201).json(novoFilme);
+  res.status(201).json({ mensagem: `Filme "${novoFilme.nome}" criado com sucesso!` });
 });
 
 app.listen(PORT, () => {
