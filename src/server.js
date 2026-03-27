@@ -1,5 +1,5 @@
 import express from "express";
-import { obterFilmes, criarFilme } from "./filmes.js";
+import { obterFilmes, criarFilme, excluirFilme, atualizarFilme} from "./filmes.js";
 const app = express();
 const PORT = 3000;
 
@@ -22,7 +22,27 @@ app.post("/filmes", (req, res) => {
   res.status(201).json({ mensagem: `Filme "${novoFilme.nome}" criado com sucesso!` });
 });
 
+app.delete("/filmes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+
+  excluirFilme(id);
+
+  res.status(200).json({
+    mensagem: `Filme com id ${id} removido`
+  });
+});
+
+app.patch("/filmes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const { nome, data, genero } = req.body;
+
+  atualizarFilme(id, nome, data, genero);
+
+  res.status(200).json({
+    mensagem: `Filme com id ${id} atualizado`
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
-
